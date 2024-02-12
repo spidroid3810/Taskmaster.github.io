@@ -1,0 +1,164 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            user-select: none;
+        }
+        .task-input-container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .task-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            outline: none;
+        }
+        .add-task-btn {
+            padding: 15px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            box-shadow:0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: #0096FF;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+        .add-task-btn:hover {
+            background-color: #0095FF;
+        }
+        .task-list {
+        list-style: none;
+        padding: 0;
+        overflow-y: auto; /* Add scrollbar for vertical overflow */
+        max-height: 450px; /* Adjust max-height as needed */
+        }
+        
+        
+        
+        .task-item {
+        display: flex;
+        flex-direction: column; /* Change flex-direction to column */
+        padding: 10px;
+        margin-bottom:10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        user-select: none;
+        background-color:#fff;
+        word-wrap: break-word;
+        }
+        
+        .task-item span {
+        margin-right: 10px;
+        }
+        
+       .task-item .status i {
+       margin-right: 5px; /* Adjust spacing between icon and text */
+       vertical-align: middle;
+       }
+       
+
+        
+        .task-item .status {
+        display:inline-block; /* Make the status container inline-block */
+        font-weight: bold;
+        margin-bottom: 10px; /* Adjust margin as needed */
+        text-transform: capitalize;
+        font-size: 13px;
+        padding: 7px; /* Add padding to the status container */
+        border-radius: 5px; /* Add border radius to create rounded corners */
+        width: fit-content;
+        }
+        
+        
+        
+        
+        .task-item.complete {
+         border-left:5px solid hsl(140,50%,60%);
+        }
+        .task-item.todo {
+         border-left:5px solid hsl(340,50%,60%);
+        }
+        .task-item.inprogress {
+         border-left:5px solid hsl(240,50%,60%);    
+        }
+
+        /* Dark theme styles */
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        
+        .dark-mode .task-item {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Adjust shadow color and size as needed */
+        background-color:#222;
+        }
+        
+        .dark-mode .task-input {
+        background-color: #222; /* Adjust background color for dark theme input */
+        color: #fff; /* Adjust text color for dark theme input */
+        border:none; /* Adjust border color for dark theme input */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Adjust shadow color and size as needed */
+        }
+        
+        .dark-mode .add-task-btn{
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Adjust shadow color and size as needed */
+        }
+        
+         .task-item.complete .status {
+         color:hsl(140,50%,60%);
+         background-color: #b3ffb3;
+         }
+         
+        
+        .task-item.todo .status {
+        color:hsl(340,50%,60%);
+        background-color:#ffcccc;
+        }
+        
+        .task-item.inprogress .status {
+        color: hsl(240, 50%, 60%); /* Darkened color for inprogress tasks */
+        background-color: #e6e6ff;
+        }
+        
+       
+        
+        .dark-mode .toggle-theme-icon{
+        background-color: #fff;
+        color: #333;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+.toggle-theme-icon {
+    background-color: #333;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-theme-icon.rotate {
+    transform: rotate(360deg); /* Rotate the icon 180 degrees */
+}
+
+.date-time {
+    font-size: 12px;
+    text-align: right;
+}
+
+
