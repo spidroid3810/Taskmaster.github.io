@@ -122,14 +122,17 @@ function toggleTheme() {
 }
 
 function loadTheme() {
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
+
+    if (theme === 'dark' || (theme !== 'light' && prefersDarkMode)) {
         document.body.classList.add('dark-mode');
         toggleThemeBtn.classList.add('rotate');
         toggleThemeBtn.classList.remove('fa-sun');
         toggleThemeBtn.classList.add('fa-moon');
     }
 }
+
 
 addTaskBtn.addEventListener('click', addTask);
 
