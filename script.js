@@ -123,15 +123,22 @@ function toggleTheme() {
 
 function loadTheme() {
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersLightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
     const theme = localStorage.getItem('theme');
 
-    if (theme === 'dark' || (theme !== 'light' && prefersDarkMode)) {
+    if (theme === 'light' || (theme !== 'dark' && prefersLightMode)) {
+        document.body.classList.remove('dark-mode');
+        toggleThemeBtn.classList.remove('rotate');
+        toggleThemeBtn.classList.remove('fa-moon');
+        toggleThemeBtn.classList.add('fa-sun');
+    } else if (theme === 'dark' || (theme !== 'light' && prefersDarkMode)) {
         document.body.classList.add('dark-mode');
         toggleThemeBtn.classList.add('rotate');
         toggleThemeBtn.classList.remove('fa-sun');
         toggleThemeBtn.classList.add('fa-moon');
     }
 }
+
 
 
 addTaskBtn.addEventListener('click', addTask);
